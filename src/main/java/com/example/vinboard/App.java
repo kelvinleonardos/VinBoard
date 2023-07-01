@@ -11,6 +11,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle(Const.APP_NAME);
+        stage.setResizable(false);
         stage.setScene(ClipList.getClipList());
         stage.show();
     }
