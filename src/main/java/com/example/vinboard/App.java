@@ -1,5 +1,6 @@
 package com.example.vinboard;
 
+import com.example.vinboard.scenes.ClipList;
 import com.example.vinboard.utils.Const;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,10 +10,8 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage stage) {
-        StackPane h = new StackPane();
-        Scene scene = new Scene(h, Const.APP_WINDOW_WIDTH, Const.APP_WINDOW_HEIGHT);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
+        stage.setTitle(Const.APP_NAME);
+        stage.setScene(ClipList.getClipList());
         stage.show();
     }
 
