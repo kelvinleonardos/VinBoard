@@ -23,4 +23,11 @@ public class Const {
     public static int NOTES_SCROLL_WIDTH = APP_WINDOW_WIDTH;
     public static int NOTES_SCROLL_HEIGHT = 315;
 
+    public static int CLIP_BOX_WIDTH = 320;
+    public static int CLIP_BOX_HEIGHT = 90;
+
+    public static int NOTE_BOX_WIDTH = CLIP_BOX_WIDTH;
+    public static int NOTE_BOX_HEIGHT = CLIP_BOX_HEIGHT;
+
+
 }

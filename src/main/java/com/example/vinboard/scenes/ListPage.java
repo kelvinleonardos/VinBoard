@@ -1,9 +1,9 @@
 package com.example.vinboard.scenes;
 
-import com.example.vinboard.scenes.components.ClipScroll;
+import com.example.vinboard.scenes.components.scroll.ClipScroll;
 import com.example.vinboard.scenes.components.GroupOpt;
 import com.example.vinboard.scenes.components.Header;
-import com.example.vinboard.scenes.components.NotesScroll;
+import com.example.vinboard.scenes.components.scroll.NotesScroll;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 
