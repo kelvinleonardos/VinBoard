@@ -1,5 +1,6 @@
 package com.example.vinboard.scenes.components;
 
+import com.example.vinboard.scenes.ListPage;
 import com.example.vinboard.utils.Const;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -51,6 +52,14 @@ public class GroupOpt {
 
         c_but.setGraphic(c_vbox);
         n_but.setGraphic(n_vbox);
+
+        c_but.setOnAction(event -> {
+            ListPage.ListChanger("C");
+        });
+
+        n_but.setOnAction(event -> {
+            ListPage.ListChanger("N");
+        });
 
         HBox opt = new HBox(c_but, n_but);
         opt.setAlignment(Pos.CENTER);

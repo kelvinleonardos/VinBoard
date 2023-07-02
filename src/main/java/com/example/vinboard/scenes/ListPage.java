@@ -3,24 +3,40 @@ package com.example.vinboard.scenes;
 import com.example.vinboard.scenes.components.ClipScroll;
 import com.example.vinboard.scenes.components.GroupOpt;
 import com.example.vinboard.scenes.components.Header;
-import com.example.vinboard.utils.Const;
+import com.example.vinboard.scenes.components.NotesScroll;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 
 public class ListPage {
 
-    public static Scene getClipList() {
+    static VBox list;
+    public static Scene getListPage(String choice) {
 
-        VBox clip_list = new VBox(
-                Header.getHeader(),
-                GroupOpt.getGroupOpt(Const.GROUP_CHOICE),
-                ClipScroll.getClipScroll()
-        );
+        list = new VBox();
 
-        Scene scene = new Scene(clip_list);
+        VBox list_page = new VBox(Header.getHeader(), list);
+
+        ListChanger(choice);
+
+        Scene scene = new Scene(list_page);
 
         return scene;
 
+    }
+
+    public static void ListChanger(String choice) {
+        list.getChildren().clear();
+        if (choice.equals("C")) {
+            list.getChildren().addAll(
+                    GroupOpt.getGroupOpt("C"),
+                    ClipScroll.getClipScroll()
+            );
+        } else if (choice.equals("N")) {
+            list.getChildren().addAll(
+                    GroupOpt.getGroupOpt("N"),
+                    NotesScroll.getNotesScroll()
+            );
+        }
     }
 
 }

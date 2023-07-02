@@ -10,7 +10,7 @@ public class Const {
     public static int HEADER_WIDTH = APP_WINDOW_WIDTH;
     public static int HEADER_HEIGHT = 60;
 
-    public static String GROUP_CHOICE = "C"; // "N"
+    public static String GROUP_CHOICE_MODE = "C"; // "N"
     public static String GROUP_CHOICE_C = "Clipboard";
     public static String GROUP_CHOICE_N = "Notes";
 

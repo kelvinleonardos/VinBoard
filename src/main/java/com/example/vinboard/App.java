@@ -10,7 +10,7 @@ public class App extends Application {
     public void start(Stage stage) {
         stage.setTitle(Const.APP_NAME);
         stage.setResizable(false);
-        stage.setScene(ListPage.getClipList());
+        stage.setScene(ListPage.getListPage(Const.GROUP_CHOICE_MODE));
         stage.show();
     }
 
