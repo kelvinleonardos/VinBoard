@@ -4,7 +4,7 @@ import com.example.vinboard.config.DBConfig;
 
 import java.sql.SQLException;
 
-public class DBController extends DBConfig {
+public class NotesController extends DBConfig {
 
     public static void insertData(String date_time, String title, String content) {
 
