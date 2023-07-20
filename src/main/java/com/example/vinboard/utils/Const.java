@@ -26,8 +26,17 @@ public class Const {
     public static int CLIP_BOX_WIDTH = 320;
     public static int CLIP_BOX_HEIGHT = 90;
 
+    public static int CLIP_CONTENT_WIDTH = 300;
+    public static int CLIP_CONTENT_HEIGHT = 90;
+
+    public static int CLIP_ICON_WIDTH = 20;
+    public static int CLIP_ICON_HEIGHT = 90;
+
     public static int NOTE_BOX_WIDTH = CLIP_BOX_WIDTH;
     public static int NOTE_BOX_HEIGHT = CLIP_BOX_HEIGHT;
+
+    public static String PINNED_ICON = "com/example/vinboard/icons/2.png";
+    public static String UNPINNED_ICON = "com/example/vinboard/icons/icons8-push-pin-50(1).png";
 
 
 }

@@ -1,6 +1,6 @@
 package com.example.vinboard.models;
 
-public class NoteContent {
+abstract class NoteContent {
 
     private int id;
     private String date_time;

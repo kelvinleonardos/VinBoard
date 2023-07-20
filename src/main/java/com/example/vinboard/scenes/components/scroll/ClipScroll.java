@@ -22,7 +22,7 @@ public class ClipScroll {
             int count = 0;
             for (String j : i) {
                 if (count > 0) {
-                    ClipBox cb = new ClipBox(j);
+                    ClipBox cb = new ClipBox(j, true);
                     clip_scroll_vbox.getChildren().add(cb.getClipBox());
                 }
                 count++;
