@@ -33,7 +33,7 @@ public class ClipController extends DBConfig {
 
         ArrayList<ArrayList<String>> result = new ArrayList<>();
 
-        query = "SELECT * FROM tb_notes";
+        query = "SELECT * FROM tb_clips";
 
         try {
             statement = connection.createStatement();
@@ -42,7 +42,7 @@ public class ClipController extends DBConfig {
 
             while (resultSet.next()) {
                 ArrayList<String> row = new ArrayList<>();
-                for (int i = 1; i <= 4; i++) {
+                for (int i = 1; i <= 2; i++) {
                     row.add(resultSet.getString(i));
                 }
                 result.add(row);
