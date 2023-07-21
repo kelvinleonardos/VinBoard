@@ -55,6 +55,24 @@ public class ClipController extends DBConfig {
 
     }
 
+    public static void deleteData(int id) {
+        connection();
+
+        query = "DELETE FROM tb_clips WHERE id=?";
+
+        try {
+            preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         for (ArrayList<String> r : getAll()) {
             System.out.print("{");

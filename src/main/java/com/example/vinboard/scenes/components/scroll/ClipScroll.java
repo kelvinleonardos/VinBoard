@@ -12,23 +12,13 @@ import java.util.ArrayList;
 
 public class ClipScroll {
 
+    private static VBox clip_scroll_vbox = new VBox();
     public static ScrollPane getClipScroll() {
 
-        VBox clip_scroll_vbox = new VBox();
         clip_scroll_vbox.setPrefWidth(Const.CLIP_SCROLL_WIDTH);
         clip_scroll_vbox.setAlignment(Pos.TOP_CENTER);
 
-        for (ArrayList<String> i : ClipController.getAll()) {
-            int count = 0;
-            for (String j : i) {
-                if (count > 0) {
-                    ClipBox cb = new ClipBox(j, true);
-                    clip_scroll_vbox.getChildren().add(cb.getClipBox());
-                }
-                count++;
-            }
-            count = 0;
-        }
+        callContent();
 
         ScrollPane clip_scroll = new ScrollPane(clip_scroll_vbox);
         clip_scroll.setPrefSize(Const.CLIP_SCROLL_WIDTH, Const.CLIP_SCROLL_HEIGHT);
@@ -36,6 +26,25 @@ public class ClipScroll {
 
         return clip_scroll;
 
+    }
+
+    public static void callContent() {
+        clip_scroll_vbox.getChildren().clear();
+        for (ArrayList<String> i : ClipController.getAll()) {
+            int count = 0;
+            int temp = -1;
+            for (String j : i) {
+                if (count == 0) {
+                    temp = Integer.parseInt(j);
+                }
+                if (count > 0) {
+                    ClipBox cb = new ClipBox(temp, j, true);
+                    clip_scroll_vbox.getChildren().add(cb.getClipBox());
+                }
+                count++;
+            }
+            count = 0;
+        }
     }
 
 }
