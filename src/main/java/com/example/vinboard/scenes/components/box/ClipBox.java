@@ -29,7 +29,9 @@ public class ClipBox extends ClipContent {
             pinned_icon.setFitWidth(Const.CLIP_ICON_WIDTH);
             pinned_icon.setPreserveRatio(true);
             pinned_icon.setOnMouseClicked(event -> {
-                ClipController.deleteData(super.getId());
+                ClipController.deleteData(this.getId());
+                this.setPinned(false);
+                ClipScroll.addCliped(this);
                 ClipScroll.callContent();
             });
             clip_box.getChildren().addAll(clip_content, pinned_icon);
