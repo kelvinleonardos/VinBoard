@@ -24,7 +24,7 @@ public class ClipBox extends ClipContent {
         clip_content.setPrefSize(Const.CLIP_CONTENT_WIDTH, Const.CLIP_CONTENT_HEIGHT);
         clip_content.setWrapText(true);
 
-        if (super.isPinned()) {
+        if (this.isPinned()) {
             ImageView pinned_icon = new ImageView(Const.PINNED_ICON);
             pinned_icon.setFitWidth(Const.CLIP_ICON_WIDTH);
             pinned_icon.setPreserveRatio(true);
@@ -39,6 +39,11 @@ public class ClipBox extends ClipContent {
             ImageView unpinned_icon = new ImageView(Const.UNPINNED_ICON);
             unpinned_icon.setFitWidth(Const.CLIP_ICON_WIDTH);
             unpinned_icon.setPreserveRatio(true);
+            unpinned_icon.setOnMouseClicked(event -> {
+                ClipController.insertData(this.getContent());
+                ClipScroll.removeCliped(this);
+                ClipScroll.callContent();
+            });
             clip_box.getChildren().addAll(clip_content, unpinned_icon);
         }
 

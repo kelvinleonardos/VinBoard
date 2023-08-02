@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class ClipScroll {
 
-    private static ArrayList<ClipBox> cliped = new ArrayList<>();
+    public static ArrayList<ClipBox> cliped = new ArrayList<>();
     private static VBox clip_scroll_vbox = new VBox();
     public static ScrollPane getClipScroll() {
 
@@ -21,6 +21,7 @@ public class ClipScroll {
         callContent();
 
         ScrollPane clip_scroll = new ScrollPane(clip_scroll_vbox);
+        clip_scroll.setFitToWidth(true);
         clip_scroll.setPrefSize(Const.CLIP_SCROLL_WIDTH, Const.CLIP_SCROLL_HEIGHT);
         clip_scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         clip_scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -54,6 +55,12 @@ public class ClipScroll {
     public static void addCliped(ClipBox clipbox) {
 
         cliped.add(clipbox);
+
+    }
+
+    public static void removeCliped(ClipBox clipbox) {
+
+        cliped.remove(clipbox);
 
     }
 
